@@ -4,7 +4,6 @@
 
 class LightBulb
 {
-	int* lamps;
 	static int numberLights;
 
 protected:
