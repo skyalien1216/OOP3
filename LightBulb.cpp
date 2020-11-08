@@ -2,12 +2,13 @@
 
 int LightBulb::numberLights = 0;
 
-void LightBulb::AddNumberLight() {
-	numberLights++;
-}
 
 LightBulb::LightBulb() {
 	color_light = " ";
+}
+
+void LightBulb::AddNumberLight() {
+	numberLights++;
 }
 
 void LightBulb::DeleteNumberLight(){
