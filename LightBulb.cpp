@@ -8,7 +8,6 @@ void LightBulb::AddNumberLight() {
 
 LightBulb::LightBulb() {
 	color_light = " ";
-	lamps = new int[numberLights];
 }
 
 void LightBulb::DeleteNumberLight(){

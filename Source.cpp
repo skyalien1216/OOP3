@@ -29,9 +29,7 @@ int main() {
 		
 	std::cout << std::endl;
 
-	LightBulb* lamps = new LightBulb[numberOfLamps];
-
-	User::CreatingLamp(lamps, numberOfLamps);
+	User user(numberOfLamps);
 	
 	while (1) {
 
@@ -50,7 +48,7 @@ int main() {
 			std::cout << "1. Мигание" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnManyLight(lamps);
+			user.TurnOnManyLight();
 			break;
 
 		case 2:
@@ -58,9 +56,10 @@ int main() {
 			std::cout << "2. Постоянный свет" << std::endl;
 			std::cout << std::endl;
 			
-			User::TurnOnConstantLight(lamps);
+			user.TurnOnConstantLight();
 			std::cin.ignore();
 			std::cin.get();
+			system("cls");
 			break;
 
 		case 3:
@@ -68,7 +67,10 @@ int main() {
 			std::cout << "3. Один цвет постоянный свет" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnOneLight(lamps, ColorPicker());
+			user.TurnOnOneLight(ColorPicker());
+			std::cin.ignore();
+			std::cin.get();
+			system("cls");
 			break;
 
 		case 4:
@@ -76,7 +78,8 @@ int main() {
 			std::cout << "4. Один цвет мигание" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnOneFlickeringLight(lamps, ColorPicker());
+			user.TurnOnOneFlickeringLight(ColorPicker());
+			system("cls");
 		}
 			  break;
 
@@ -85,7 +88,8 @@ int main() {
 			std::cout << "5. Один цвет мерцание" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnOneSlowlyFlickeringLight(lamps, ColorPicker());
+			user.TurnOnOneSlowlyFlickeringLight(ColorPicker());
+			system("cls");
 		}
 		break;
 
@@ -93,11 +97,7 @@ int main() {
 			std::cout << "6. Мерцание" << std::endl;
 			std::cout << std::endl;
 		
-			User::TurnOnManySlowlyLight(lamps);
-			break;
-
-		case 7:
-			system("cls");
+			user.TurnOnManySlowlyLight();
 			break;
 
 		default:
@@ -118,7 +118,6 @@ void Info() {
 	std::cout << "4. Один цвет мигание" << std::endl;
 	std::cout << "5. Один цвет мерцание" << std::endl;
 	std::cout << "6. Мерцание" << std::endl;
-	std::cout << "7. Очистить экран" << std::endl;
 	std::cout << "Любой другой символ - закончить работу" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Введите цифру: " << std::endl << "> ";
@@ -128,6 +127,6 @@ std::string ColorPicker() {
 	std::string user_color;
 	std::cout << "Введите цвет (красный, зеленый, синий):" << std::endl;
 	std::cin >> user_color;
-	std::cout << std::endl;
+	system("cls");
 	return user_color;
 }

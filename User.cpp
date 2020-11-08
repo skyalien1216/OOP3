@@ -7,66 +7,69 @@
 #include <iostream>
 #include <windows.h>
 
-void User::CreatingLamp(LightBulb lamps[], int numberOfLamps) {
+User::User(int numberOfLamps) {
+
+	lamp = new LightBulb[numberOfLamps];
+
 	for (int i = 0; i < numberOfLamps; i++)
 	{
 		if (i % 3 == 0)
-			lamps[i] = RedBulb();
+			lamp[i] = RedBulb();
 
 		if (i % 3 == 1)
-			lamps[i] = BlueBulb();
+			lamp[i] = BlueBulb();
 
 		if (i % 3 == 2)
-			lamps[i] = GreenBulb();
+			lamp[i] = GreenBulb();
 	}
 }
 
-void User::TurnOnOneLight(LightBulb* light, std::string color_choice)
+void User::TurnOnOneLight(std::string color_choice)
 {
-	for (int i = 0; i < light->GetNumberLights(); i++)
+	for (int i = 0; i < lamp->GetNumberLights(); i++)
 	{
 		std::cout << std::endl;
-		if (light[i].Light() == color_choice)
-			std::cout << light[i].Light() << std::endl;
+		if (lamp[i].Light() == color_choice)
+			std::cout << lamp[i].Light() << std::endl;
 		else 
 			std::cout << " > "  << std::endl;
 	}
 
 }
 
-void User::TurnOnOneFlickeringLight(LightBulb* light, std::string user_color)
+void User::TurnOnOneFlickeringLight(std::string user_color)
 {
 	for (int i = 0; i < 10; i++) {
 		if (i % 2 == 0) {
 			std::cout << std::endl;
-			User::TurnOnOneLight(light, user_color);
+			User::TurnOnOneLight(user_color);
 		}
 		Sleep(500);
 		system("cls");
 	}
 }
 
-void User::TurnOnOneSlowlyFlickeringLight(LightBulb* light, std::string user_color)
+void User::TurnOnOneSlowlyFlickeringLight(std::string user_color)
 {
 	for (int i = 0; i < 10; i++) {
 		if (i % 2 == 0) {
 			std::cout << std::endl;
-			User::TurnOnOneLight(light, user_color);
+			User::TurnOnOneLight(user_color);
 		}
 		Sleep(1200);
 		system("cls");
 	}
 }
 
-void User::TurnOnManyLight(LightBulb light[])
+void User::TurnOnManyLight()
 {
 	for (int k = 0; k < 10; k++)
 	{
 		if (k % 2 == 0) {
-			for (int i = 0; i < light->GetNumberLights(); i++)
+			for (int i = 0; i < lamp->GetNumberLights(); i++)
 			{
 				std::cout << std::endl;
-				std::cout << light[i].Light() << std::endl;
+				std::cout << lamp[i].Light() << std::endl;
 			}
 		}
 		Sleep(500);
@@ -74,15 +77,15 @@ void User::TurnOnManyLight(LightBulb light[])
 	}
 }
 
-void User::TurnOnManySlowlyLight(LightBulb light[])
+void User::TurnOnManySlowlyLight()
 {
 	for (int k = 0; k < 10; k++)
 	{
 		if (k % 2 == 0) {
-			for (int i = 0; i < light->GetNumberLights(); i++)
+			for (int i = 0; i < lamp->GetNumberLights(); i++)
 			{
 				std::cout << std::endl;
-				std::cout << light[i].Light() << std::endl;
+				std::cout << lamp[i].Light() << std::endl;
 			}
 		}
 		Sleep(1200);
@@ -90,12 +93,12 @@ void User::TurnOnManySlowlyLight(LightBulb light[])
 	}
 }
 
-void User::TurnOnConstantLight(LightBulb lamps[]) 
+void User::TurnOnConstantLight() 
 {
-	for (int i = 0; i < lamps->GetNumberLights(); i++)
+	for (int i = 0; i < lamp->GetNumberLights(); i++)
 	{
 		std::cout << std::endl;
-		std::cout << lamps[i].Light() << std::endl;
+		std::cout << lamp[i].Light() << std::endl;
 	}
 }
 

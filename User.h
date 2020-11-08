@@ -4,13 +4,17 @@
 
 class User
 {
+	LightBulb* lamp;
+
 public:
-	static void CreatingLamp(LightBulb lamps[], int numberOfLamps);
-	static void TurnOnOneLight(LightBulb* light, std::string color_choice);
-	static void TurnOnManyLight(LightBulb light[]);
-	static void TurnOnManySlowlyLight(LightBulb light[]);
-	static void TurnOnConstantLight(LightBulb lamps[]);
-	static void TurnOnOneFlickeringLight(LightBulb* light, std::string user_color);
-	static void TurnOnOneSlowlyFlickeringLight(LightBulb* light, std::string user_color);
+
+	User(int numberOfLamps);
+
+	 void TurnOnOneLight(std::string color_choice);
+	 void TurnOnManyLight();
+	 void TurnOnManySlowlyLight();
+	 void TurnOnConstantLight();
+	 void TurnOnOneFlickeringLight(std::string user_color);
+	 void TurnOnOneSlowlyFlickeringLight(std::string user_color);
 
 };
