@@ -12,24 +12,14 @@
 
 void Info();
 std::string ColorPicker();
+int EnteringNumberOfLights();
 
 int main() {
 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	std::cout << "Введите число для установки количества лампочек : " << std::endl;
-	int numberOfLamps;
-	std::cin >> numberOfLamps;
-
-	while (numberOfLamps <= 0 || numberOfLamps > 30) {
-		std::cout << "Некорректное число!Введите заново: ";
-		std::cin >> numberOfLamps;
-	}
-		
-	std::cout << std::endl;
-
-	User user(numberOfLamps);
+	User user(EnteringNumberOfLights());
 	
 	while (1) {
 
@@ -109,7 +99,6 @@ int main() {
 }
 
 
-
 void Info() {
 
 	std::cout << "1. Мигание" << std::endl;
@@ -127,6 +116,24 @@ std::string ColorPicker() {
 	std::string user_color;
 	std::cout << "Введите цвет (красный, зеленый, синий):" << std::endl;
 	std::cin >> user_color;
+
+	while (user_color != "красный" && user_color != "зеленый" && user_color != "синий") {
+		std::cout << "Нет такого цвета!!\n";
+		std::cout << "Введите цвет (красный, зеленый, синий):" << std::endl;
+		std::cin >> user_color;
+	}
 	system("cls");
 	return user_color;
+}
+
+int EnteringNumberOfLights() {
+	std::cout << "Введите число для установки количества лампочек : " << std::endl;
+	int numberOfLamps;
+	std::cin >> numberOfLamps;
+
+	if (numberOfLamps <= 0 || numberOfLamps > 30) {
+		std::cout << "Некорректное число!\n";
+		EnteringNumberOfLights();
+	}
+	return numberOfLamps;
 }
