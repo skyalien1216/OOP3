@@ -7,11 +7,13 @@
 #include <iostream>
 #include <windows.h>
 
+
 User::User(int numberOfLamps) {
 
-	lamp = new LightBulb[numberOfLamps];
+	SetNumberLights(numberOfLamps);
+	lamp = new LightBulb[numberLights];
 
-	for (int i = 0; i < numberOfLamps; i++)
+	for (int i = 0; i < numberLights; i++)
 	{
 		if (i % 3 == 0)
 			lamp[i] = RedBulb();
@@ -26,7 +28,7 @@ User::User(int numberOfLamps) {
 
 void User::TurnOnOneLight(std::string color_choice)
 {
-	for (int i = 0; i < lamp->GetNumberLights(); i++)
+	for (int i = 0; i < numberLights; i++)
 	{
 		std::cout << std::endl;
 		if (lamp[i].Light() == color_choice)
@@ -61,12 +63,17 @@ void User::TurnOnOneSlowlyFlickeringLight(std::string user_color)
 	}
 }
 
+int User::GetNumberLights()
+{ 
+	return numberLights;
+}
+
 void User::TurnOnManyLight()
 {
 	for (int k = 0; k < 10; k++)
 	{
 		if (k % 2 == 0) {
-			for (int i = 0; i < lamp->GetNumberLights(); i++)
+			for (int i = 0; i < numberLights; i++)
 			{
 				std::cout << std::endl;
 				std::cout << lamp[i].Light() << std::endl;
@@ -82,7 +89,7 @@ void User::TurnOnManySlowlyLight()
 	for (int k = 0; k < 10; k++)
 	{
 		if (k % 2 == 0) {
-			for (int i = 0; i < lamp->GetNumberLights(); i++)
+			for (int i = 0; i < numberLights; i++)
 			{
 				std::cout << std::endl;
 				std::cout << lamp[i].Light() << std::endl;
@@ -95,10 +102,25 @@ void User::TurnOnManySlowlyLight()
 
 void User::TurnOnConstantLight() 
 {
-	for (int i = 0; i < lamp->GetNumberLights(); i++)
+	for (int i = 0; i < numberLights; i++)
 	{
 		std::cout << std::endl;
 		std::cout << lamp[i].Light() << std::endl;
 	}
 }
 
+void User::AddNumberLight() {
+	numberLights++;
+}
+
+void User::DeleteNumberLight() {
+	numberLights--;
+}
+
+void User::SetNumberLights(int numberLights) {
+	this->numberLights = numberLights;
+}
+
+int  User::GetNumberLights() {
+	return numberLights;
+}

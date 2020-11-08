@@ -5,6 +5,7 @@
 class User
 {
 	LightBulb* lamp;
+	static int numberLights;
 
 public:
 
@@ -16,5 +17,11 @@ public:
 	 void TurnOnConstantLight();
 	 void TurnOnOneFlickeringLight(std::string user_color);
 	 void TurnOnOneSlowlyFlickeringLight(std::string user_color);
+
+	 void AddNumberLight();
+	 void DeleteNumberLight();
+
+	 void SetNumberLights(int numberLights);
+	 int GetNumberLights();
 
 };
