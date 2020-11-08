@@ -8,7 +8,7 @@ void LightBulb::AddNumberLight() {
 
 LightBulb::LightBulb() {
 	color_light = " ";
-	timeOfLight = 0;
+	lamps = new int[numberLights];
 }
 
 void LightBulb::DeleteNumberLight(){
@@ -19,16 +19,8 @@ void LightBulb::SetNumberLights(int numberLights) {
 	this->numberLights = numberLights;
 }
 
-void LightBulb::SetTimeOfLight(int timeOfLight) {
-	this->timeOfLight = timeOfLight;
-}
-
 int  LightBulb::GetNumberLights() {
 	return numberLights;
-}
-
-int LightBulb::GetTimeOfLight() {
-	return timeOfLight;
 }
 
 std::string LightBulb::Light() {

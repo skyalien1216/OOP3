@@ -5,8 +5,4 @@ BlueBulb::BlueBulb() : LightBulb() {
 	LightBulb::AddNumberLight();
 }
 
-BlueBulb::BlueBulb(int timeOfLight) : BlueBulb() {
-	SetTimeOfLight(timeOfLight);
-}
-
 BlueBulb::~BlueBulb() {}

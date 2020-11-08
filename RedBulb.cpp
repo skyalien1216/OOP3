@@ -5,10 +5,6 @@ RedBulb::RedBulb() : LightBulb() {
 	LightBulb::AddNumberLight();
 }
 
-RedBulb::RedBulb(int timeOfLight) : RedBulb() {
-	SetTimeOfLight(timeOfLight);
-}
-
 RedBulb::~RedBulb() {
 
 }

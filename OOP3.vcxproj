@@ -142,6 +142,7 @@
     <ClCompile Include="BlueBulb.cpp" />
     <ClCompile Include="GreenBulb.cpp" />
     <ClCompile Include="LightBulb.cpp" />
+    <ClCompile Include="Lights.cpp" />
     <ClCompile Include="RedBulb.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="User.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="BlueBulb.h" />
     <ClInclude Include="GreenBulb.h" />
     <ClInclude Include="LightBulb.h" />
+    <ClInclude Include="Lights.h" />
     <ClInclude Include="RedBulb.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>

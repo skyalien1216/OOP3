@@ -5,8 +5,5 @@ GreenBulb::GreenBulb() : LightBulb() {
 	LightBulb::AddNumberLight();
 }
 
-GreenBulb::GreenBulb(int timeOfLight) : GreenBulb() {
-	SetTimeOfLight(timeOfLight);
-}
 
 GreenBulb::~GreenBulb() {}

@@ -21,101 +21,41 @@ void User::CreatingLamp(LightBulb lamps[], int numberOfLamps) {
 	}
 }
 
-void User::TurnOnOneLight(LightBulb* light)
+void User::TurnOnOneLight(LightBulb* light, std::string color_choice)
 {
-	for (int i = 0; i < light->GetNumberLights()-1; i++)
+	for (int i = 0; i < light->GetNumberLights(); i++)
 	{
 		std::cout << std::endl;
-		std::cout << light->Light() << std::endl;
-	}
-
-}
-
-void User::TurnOnOneFlickeringLight(std::string user_color)
-{
-	if (user_color == "красный")
-	{
-		for (int i = 0; i < 10; i++) {
-			if (i % 2 == 0) {
-				std::cout << std::endl;
-				User::TurnOnOneLight(new RedBulb());
-				LightBulb::DeleteNumberLight();
-			}
-			Sleep(500);
-			system("cls");
-		}
-	}
-	else
-		if (user_color == "зеленый")
-		{
-			for (int i = 0; i < 10; i++) {
-				if (i % 2 == 0) {
-					std::cout << std::endl;
-					User::TurnOnOneLight(new GreenBulb());
-					LightBulb::DeleteNumberLight();
-				}
-				Sleep(500);
-				system("cls");
-			}
-		}
-		else
-			if (user_color == "синий")
-			{
-				for (int i = 0; i < 10; i++) {
-					if (i % 2 == 0) {
-						std::cout << std::endl;
-						User::TurnOnOneLight(new BlueBulb());
-						LightBulb::DeleteNumberLight();
-					}
-					Sleep(500);
-					system("cls");
-				}
-			}
-			else std::cout << "Нет такого цвета\n";
-
-}
-
-void User::TurnOnOneSlowlyFlickeringLight(std::string user_color)
-{
-	if (user_color == "красный")
-	{
-		for (int i = 0; i < 10; i++) {
-			if (i % 2 == 0) {
-				std::cout << std::endl;
-				User::TurnOnOneLight(new RedBulb());
-				LightBulb::DeleteNumberLight();
-			}
-			Sleep(1200);
-			system("cls");
-		}
-	}
-	else
-		if (user_color == "зеленый")
-		{
-			for (int i = 0; i < 10; i++) {
-				if (i % 2 == 0) {
-					std::cout << std::endl;
-					User::TurnOnOneLight(new GreenBulb());
-					LightBulb::DeleteNumberLight();
-				}
-				Sleep(1200);
-				system("cls");
-			}
-		}	
+		if (light[i].Light() == color_choice)
+			std::cout << light[i].Light() << std::endl;
 		else 
-			if (user_color == "синий")
-			{
-				for (int i = 0; i < 10; i++) {
-					if (i % 2 == 0) {
-						std::cout << std::endl;
-						User::TurnOnOneLight(new BlueBulb());
-						LightBulb::DeleteNumberLight();
-					}
-					Sleep(1200);
-					system("cls");
-				}
-			}
-			else std::cout << "Нет такого цвета\n";
+			std::cout << " > "  << std::endl;
+	}
+
+}
+
+void User::TurnOnOneFlickeringLight(LightBulb* light, std::string user_color)
+{
+	for (int i = 0; i < 10; i++) {
+		if (i % 2 == 0) {
+			std::cout << std::endl;
+			User::TurnOnOneLight(light, user_color);
+		}
+		Sleep(500);
+		system("cls");
+	}
+}
+
+void User::TurnOnOneSlowlyFlickeringLight(LightBulb* light, std::string user_color)
+{
+	for (int i = 0; i < 10; i++) {
+		if (i % 2 == 0) {
+			std::cout << std::endl;
+			User::TurnOnOneLight(light, user_color);
+		}
+		Sleep(1200);
+		system("cls");
+	}
 }
 
 void User::TurnOnManyLight(LightBulb light[])

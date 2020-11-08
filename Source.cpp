@@ -64,39 +64,19 @@ int main() {
 			break;
 
 		case 3:
-		{
+
 			std::cout << "3. Один цвет постоянный свет" << std::endl;
 			std::cout << std::endl;
 
-			std::string user_color = ColorPicker();
-
-			if (user_color == "красный")
-			{
-				User::TurnOnOneLight(new RedBulb());
-				LightBulb::DeleteNumberLight();
-			} else
-				if (user_color == "зеленый")
-				{
-					User::TurnOnOneLight(new GreenBulb());
-					LightBulb::DeleteNumberLight();
-				}
-				else
-					if (user_color == "синий")
-					{
-						User::TurnOnOneLight(new BlueBulb());
-						LightBulb::DeleteNumberLight();
-					}
-					else
-						std::cout << "Нет такого цвета\n";
-		}
-			  break;
+			User::TurnOnOneLight(lamps, ColorPicker());
+			break;
 
 		case 4:
 		{
 			std::cout << "4. Один цвет мигание" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnOneFlickeringLight(ColorPicker());
+			User::TurnOnOneFlickeringLight(lamps, ColorPicker());
 		}
 			  break;
 
@@ -105,7 +85,7 @@ int main() {
 			std::cout << "5. Один цвет мерцание" << std::endl;
 			std::cout << std::endl;
 
-			User::TurnOnOneSlowlyFlickeringLight(ColorPicker());
+			User::TurnOnOneSlowlyFlickeringLight(lamps, ColorPicker());
 		}
 		break;
 

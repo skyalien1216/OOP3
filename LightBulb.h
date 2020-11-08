@@ -4,7 +4,7 @@
 
 class LightBulb
 {
-	int timeOfLight;
+	int* lamps;
 	static int numberLights;
 
 protected:
@@ -18,10 +18,7 @@ public:
 	static void DeleteNumberLight();
 
 	void SetNumberLights(int numberLights);
-	void SetTimeOfLight(int timeOfLight);
-
 	int GetNumberLights();
-	int GetTimeOfLight();
 
 	std::string Light();
 
