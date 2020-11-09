@@ -6,11 +6,12 @@
 
 #include <iostream>
 #include <windows.h>
+#include <sstream>
 
 
 User::User(int numberOfLamps) {
 
-	SetNumberLights(numberOfLamps);
+	numberLights = numberOfLamps;
 	lamp = new LightBulb[numberLights];
 
 	for (int i = 0; i < numberLights; i++)
@@ -24,6 +25,11 @@ User::User(int numberOfLamps) {
 		if (i % 3 == 2)
 			lamp[i] = GreenBulb();
 	}
+}
+
+User::~User()
+{
+	delete[] lamp;
 }
 
 void User::TurnOnOneLight(std::string color_choice)
@@ -61,11 +67,6 @@ void User::TurnOnOneSlowlyFlickeringLight(std::string user_color)
 		Sleep(1200);
 		system("cls");
 	}
-}
-
-int User::GetNumberLights()
-{ 
-	return numberLights;
 }
 
 void User::TurnOnManyLight()
@@ -121,6 +122,17 @@ void User::SetNumberLights(int numberLights) {
 	this->numberLights = numberLights;
 }
 
-int  User::GetNumberLights() {
+int User::GetNumberLights() {
 	return numberLights;
+}
+
+std::string User::ToString()
+{
+	std::stringstream s;
+
+	s << "Количество лампочек в гирлянде: " << numberLights << std::endl << "Цвета гирлянды: \n";
+	for (int i = 0; i < numberLights; i++)
+		s << lamp[i].Light() << std::endl;
+
+	return s.str();
 }

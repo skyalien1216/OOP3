@@ -7,6 +7,7 @@ class RedBulb:public LightBulb
 public:
 
 	RedBulb();
-	RedBulb(int timeOfLight);
 	~RedBulb();
+
+	std::string Light();
 };

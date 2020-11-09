@@ -7,6 +7,6 @@ class BlueBulb : public LightBulb
 
 public:
 	BlueBulb();
-	BlueBulb(int timeOfLight);
 	~BlueBulb();
+	virtual std::string Light();
 };

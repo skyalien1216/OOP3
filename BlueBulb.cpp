@@ -5,3 +5,9 @@ BlueBulb::BlueBulb() : LightBulb() {
 }
 
 BlueBulb::~BlueBulb() {}
+
+std::string BlueBulb::Light() {
+	std::string str = color_light + " кружочек";
+	return str;
+}
+

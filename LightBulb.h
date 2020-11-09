@@ -5,12 +5,14 @@
 class LightBulb
 {
 protected:
-
 	std::string color_light;
+	//std::string form;
 
 public:
+
 	LightBulb();
+	~LightBulb();
 
-	std::string Light();
-
+	 virtual std::string Light();
+	//std::string SetRandomForm();
 };

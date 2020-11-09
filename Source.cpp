@@ -20,6 +20,8 @@ int main() {
 	SetConsoleOutputCP(1251); 
 
 	User user(EnteringNumberOfLights());
+
+	std::cout << user.ToString();
 	
 	while (1) {
 
@@ -30,6 +32,7 @@ int main() {
 		
 		std::cin >> user_choce;
 		system("cls");
+
 
 		switch (user_choce)
 		{

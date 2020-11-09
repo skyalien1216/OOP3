@@ -5,11 +5,12 @@
 class User
 {
 	LightBulb* lamp;
-	static int numberLights;
+	int numberLights;
 
 public:
 
 	User(int numberOfLamps);
+	~User();
 
 	 void TurnOnOneLight(std::string color_choice);
 	 void TurnOnManyLight();
@@ -24,4 +25,5 @@ public:
 	 void SetNumberLights(int numberLights);
 	 int GetNumberLights();
 
+	 std::string ToString();
 };
