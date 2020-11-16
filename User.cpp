@@ -136,3 +136,22 @@ std::string User::ToString()
 
 	return s.str();
 }
+
+std::string User::InfoAboutBreaking(int time)
+{
+	std::stringstream s;
+
+	RedBulb red;
+	s << "Красный:" << std::endl
+		<< red.ChanceOfBreaking(time) << std::endl;
+
+	BlueBulb blue;
+	s << "Синий:" << std::endl
+		<< blue.ChanceOfBreaking(time) << std::endl;
+
+	GreenBulb green;
+	s << "Зеленый:" << std::endl
+		<< green.ChanceOfBreaking(time) << std::endl;
+
+	return s.str();
+}

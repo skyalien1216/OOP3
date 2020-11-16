@@ -9,7 +9,6 @@ RedBulb::~RedBulb() {
 
 }
 
-std::string RedBulb::Light() {
-	std::string str = color_light + " кружочек";
-	return str;
+double RedBulb::ChanceOfBreaking(int time) {
+	return 0.0000000025 * time + 0.03;
 }

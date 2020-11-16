@@ -2,17 +2,12 @@
 #include <string>
 #include <windows.h>
 
-#include "LightBulb.h"
-
-#include "RedBulb.h"
-#include "BlueBulb.h"
-#include "GreenBulb.h"
-
 #include "User.h"
 
 void Info();
 std::string ColorPicker();
 int EnteringNumberOfLights();
+int EnteringTime();
 
 int main() {
 
@@ -93,6 +88,11 @@ int main() {
 			user.TurnOnManySlowlyLight();
 			break;
 
+		case 7:
+			std::cout << "7. Шанс поломки за введенное время" << std::endl << std::endl;
+
+			std::cout << user.InfoAboutBreaking(EnteringTime());
+			break;
 		default:
 			return 0;
 
@@ -103,13 +103,13 @@ int main() {
 
 
 void Info() {
-
 	std::cout << "1. Мигание" << std::endl;
 	std::cout << "2. Постоянный свет" << std::endl;
 	std::cout << "3. Один цвет постоянный свет" << std::endl;
 	std::cout << "4. Один цвет мигание" << std::endl;
 	std::cout << "5. Один цвет мерцание" << std::endl;
 	std::cout << "6. Мерцание" << std::endl;
+	std::cout << "7. Шанс поломки за введенное время" << std::endl;
 	std::cout << "Любой другой символ - закончить работу" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Введите цифру: " << std::endl << "> ";
@@ -139,4 +139,18 @@ int EnteringNumberOfLights() {
 		EnteringNumberOfLights();
 	}
 	return numberOfLamps;
+}
+
+int EnteringTime() {
+	int time;
+	std::cout << "Введите время:" << std::endl;
+	std::cin >> time;
+
+	while (time < 0 || time > 11) {
+		std::cout << "Некорректное число!\n";
+		std::cout << "Введите время:" << std::endl;
+		std::cin >> time;
+	}
+	system("cls");
+	return time;
 }

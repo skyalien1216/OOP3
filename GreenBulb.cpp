@@ -7,7 +7,6 @@ GreenBulb::GreenBulb() : LightBulb() {
 
 GreenBulb::~GreenBulb() {}
 
-std::string GreenBulb::Light() {
-	std::string str = color_light + " кружочек";
-	return str;
+double GreenBulb::ChanceOfBreaking(int time) {
+	return 0.000055 * time + 0.0006;
 }

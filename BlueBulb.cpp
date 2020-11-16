@@ -6,8 +6,7 @@ BlueBulb::BlueBulb() : LightBulb() {
 
 BlueBulb::~BlueBulb() {}
 
-std::string BlueBulb::Light() {
-	std::string str = color_light + " кружочек";
-	return str;
+double BlueBulb::ChanceOfBreaking(int time) {
+	return 0.000012 * time + 0.0005;
 }
 

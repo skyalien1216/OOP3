@@ -8,5 +8,6 @@ class BlueBulb : public LightBulb
 public:
 	BlueBulb();
 	~BlueBulb();
-	virtual std::string Light();
+	
+	double ChanceOfBreaking(int time) override;
 };

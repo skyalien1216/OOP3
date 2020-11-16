@@ -10,30 +10,12 @@ LightBulb::~LightBulb()
 
 }
 
+double LightBulb::ChanceOfBreaking(int time)
+{
+	return 0;
+}
+
 std::string LightBulb::Light() {
 	return color_light;
 }
 
-//std::string LightBulb::SetRandomForm()
-//{
-//	srand(time(NULL));
-//
-//	std::string form;
-//	int num = abs(rand() % 3);
-//
-//	switch (num) {
-//	case 0:
-//		form = "звездочка";
-//		break;
-//
-//	case 1:
-//		form = "кружочек";
-//		break;
-//
-//	case 2:
-//		form = "снежинки";
-//		break;
-//	}
-//
-//	return form;
-//}

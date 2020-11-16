@@ -26,4 +26,5 @@ public:
 	 int GetNumberLights();
 
 	 std::string ToString();
+	 std::string InfoAboutBreaking(int time);
 };

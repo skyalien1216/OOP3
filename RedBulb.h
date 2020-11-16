@@ -9,5 +9,5 @@ public:
 	RedBulb();
 	~RedBulb();
 
-	std::string Light();
+	double ChanceOfBreaking(int time) override;
 };

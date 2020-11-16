@@ -6,13 +6,13 @@ class LightBulb
 {
 protected:
 	std::string color_light;
-	//std::string form;
 
 public:
 
 	LightBulb();
 	~LightBulb();
 
-	 virtual std::string Light();
-	//std::string SetRandomForm();
+	virtual double ChanceOfBreaking(int time);
+	std::string Light();
+	
 };
